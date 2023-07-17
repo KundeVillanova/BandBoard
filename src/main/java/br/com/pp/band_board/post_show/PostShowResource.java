@@ -60,7 +60,7 @@ public class PostShowResource {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping("/{idUser}")
+    @GetMapping("/user/{idUser}")
     public ResponseEntity<List<PostShowDTO>> getPostShowsByUserId(
             @PathVariable(name = "idUser") final Long idUser) {
         return ResponseEntity.ok(postShowService.getPostShowsByUserId(idUser));
