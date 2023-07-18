@@ -62,4 +62,11 @@ public class PostBandaResource {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/user/{idUser}")
+    public ResponseEntity<List<PostBandaDTO>> getPostBandasByUserId(
+            @PathVariable(name = "idUser") final Long idUser) {
+        return ResponseEntity.ok(postBandaService.getPostBandasByUserId(idUser));
+    }
+
+
 }

@@ -9,4 +9,6 @@ public interface PostBandaRepository extends JpaRepository<PostBanda, Long> {
 
     List<PostBanda> findAllByVagas(Nivel nivel);
 
+
+    List<PostBanda> findByUsuarioIdUser(Long idUser);
 }

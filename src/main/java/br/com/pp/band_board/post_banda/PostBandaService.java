@@ -97,4 +97,11 @@ public class PostBandaService {
         return postBanda;
     }
 
+    public List<PostBandaDTO> getPostBandasByUserId(final Long idUser) {
+        final List<PostBanda> postBandas = postBandaRepository.findByUsuarioIdUser(idUser);
+        return postBandas.stream()
+                .map(postBanda -> mapToDTO(postBanda, new PostBandaDTO()))
+                .collect(Collectors.toList());
+    }
+
 }
